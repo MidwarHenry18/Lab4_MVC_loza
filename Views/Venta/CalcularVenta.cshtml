@@ -1,0 +1,52 @@
+﻿@model Laboratorio4_mvc_Maldonado.Models.ClsVenta
+@{
+    ViewBag.Title = "CalcularVenta";
+}
+
+<h2>CalcularVenta</h2>
+<div>
+
+    @using (Html.BeginForm("CalcularVenta", "Venta", FormMethod.Post))
+            {
+                <div>
+                    <p>
+                        @Html.Label("Curso 1")<br />
+
+                        @Html.CheckBoxFor(model => model.Cursophp, "--") 
+                        PHP con Laravel
+
+                    </p>
+                    <p>
+                        @Html.Label("Curso 2")<br />
+                    
+                        @Html.CheckBoxFor(model => model.CursoWeb, "--") 
+                        Curso de maquetacion y diseño WEB
+
+                    </p>
+                    <p>
+                        @Html.Label("Curso 3")<br />
+
+                        @Html.CheckBoxFor(model => model.CursoMovil, "--") 
+                        ANDROID
+
+                    </p>
+                    <p>
+                        @Html.Label("Curso 4")<br />
+
+                        @Html.CheckBoxFor(model => model.Cursopython, "--") 
+                        Analitica de Datos con Python
+                    </p>
+                    <p>
+                        <label>SubTotal: S/. @Model.subtotal</label><br />
+                        <label>IGV S/. @Model.igv</label><br />
+                        <label>Total: S/. @Model.total</label><br />
+
+                    </p>
+                    <br />
+                    <button class="btn btn-primary">Calcular</button>
+                    <br />
+                </div>
+            }
+
+
+</div>
